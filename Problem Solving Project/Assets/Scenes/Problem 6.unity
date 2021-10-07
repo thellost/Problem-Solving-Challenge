@@ -144,7 +144,7 @@ MonoBehaviour:
   boxPrefab: {fileID: 8729194339496267916, guid: 391fee8a49a33964c9734cad9aecf334,
     type: 3}
   maxNumberOfBox: 5
-  areaWidth: 5
+  areaWidth: 8
   areaHeight: 5
   objectSizeMax: 0.26
 --- !u!4 &235621047
