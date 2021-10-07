@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Problem5 : MonoBehaviour
+public class AvatarMovement6 : MonoBehaviour
 {
     public float speed;
     Vector2 movement;

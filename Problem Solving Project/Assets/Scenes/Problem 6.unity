@@ -112,6 +112,55 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &235621045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 235621047}
+  - component: {fileID: 235621046}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &235621046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235621045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eec7747287b7e244916cfaa4156e8a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxPrefab: {fileID: 8729194339496267916, guid: 391fee8a49a33964c9734cad9aecf334,
+    type: 3}
+  maxNumberOfBox: 5
+  areaWidth: 5
+  areaHeight: 5
+  objectSizeMax: 0.26
+--- !u!4 &235621047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235621045}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.76908267, y: -0.6132511, z: -0.08707742}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &262645586
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,8 +172,8 @@ GameObject:
   - component: {fileID: 262645588}
   - component: {fileID: 262645587}
   - component: {fileID: 262645590}
-  - component: {fileID: 262645589}
   - component: {fileID: 262645591}
+  - component: {fileID: 262645589}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -189,7 +238,7 @@ Transform:
   m_GameObject: {fileID: 262645586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -203,9 +252,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 262645586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7bf44370f9481f4a835b2bb05ed502f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f8f30a6c38c78e4d8303f3e69fa0e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3.5
 --- !u!50 &262645590
 Rigidbody2D:
   serializedVersion: 4
@@ -222,7 +272,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 75da2e5f472a8cb419deb290391ff60a, type: 2}
+  m_Material: {fileID: 6200000, guid: d602eea6c84acf34890ef0393ef7b047, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -366,7 +416,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 535311895}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 75da2e5f472a8cb419deb290391ff60a, type: 2}
+  m_Material: {fileID: 6200000, guid: d602eea6c84acf34890ef0393ef7b047, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -472,7 +522,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 770329997}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 75da2e5f472a8cb419deb290391ff60a, type: 2}
+  m_Material: {fileID: 6200000, guid: d602eea6c84acf34890ef0393ef7b047, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -612,7 +662,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1768259699}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 75da2e5f472a8cb419deb290391ff60a, type: 2}
+  m_Material: {fileID: 6200000, guid: d602eea6c84acf34890ef0393ef7b047, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -718,7 +768,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1769796050}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 75da2e5f472a8cb419deb290391ff60a, type: 2}
+  m_Material: {fileID: 6200000, guid: d602eea6c84acf34890ef0393ef7b047, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
