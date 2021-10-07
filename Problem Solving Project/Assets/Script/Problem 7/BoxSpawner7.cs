@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxSpawner : MonoBehaviour
+public class BoxSpawner7 : MonoBehaviour
 {
     [SerializeField] GameObject boxPrefab;
     [SerializeField] int maxNumberOfBox;
@@ -19,10 +19,10 @@ public class BoxSpawner : MonoBehaviour
         for(int i = 0; i < maxNumberOfBox; i++)
         {
             
-            x = UnityEngine.Random.RandomRange(-areaWidth + areaOffset , areaWidth - areaOffset);
-            y = UnityEngine.Random.RandomRange(-areaHeight + areaOffset, areaHeight - areaOffset);
-            box = Instantiate(boxPrefab,new Vector2 (x,y), Quaternion.identity);
-            box.transform.localScale = new Vector2 (UnityEngine.Random.Range(0, objectSizeMax) + 0.5f , UnityEngine.Random.Range(0, objectSizeMax) + 0.5f);
+            x = Random.RandomRange(-areaWidth + areaOffset , areaWidth - areaOffset);
+            y = Random.RandomRange(-areaHeight + areaOffset, areaHeight - areaOffset);
+            box = Instantiate(boxPrefab, new Vector2 (x,y), Quaternion.identity);
+            box.transform.localScale = new Vector2 (Random.Range(0, objectSizeMax) + 0.5f , Random.Range(0, objectSizeMax) + 0.5f);
         }
     }
 
