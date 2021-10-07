@@ -10,11 +10,12 @@ public class Problem2 : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector2(2, 2);
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(1, 1);
+        
     }
 }
