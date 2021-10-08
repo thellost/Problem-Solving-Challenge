@@ -17,9 +17,13 @@ public class PointScript7 : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameManager7.Instance.addScore();
-        Destroy(gameObject);
+        if (collision.gameObject.name == "Avatar")
+        {
+            GameManager7.Instance.addScore();
+            Destroy(gameObject);
+        }
     }
 }
