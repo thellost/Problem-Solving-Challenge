@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PointScript8 : MonoBehaviour
 {
-    public Vector2 scale;
+    private Vector2 scale;
     private void OnEnable()
     {
 
@@ -29,9 +29,10 @@ public class PointScript8 : MonoBehaviour
     IEnumerator spawnAnimation()
     {
         transform.localScale = Vector2.zero;
+        float interval = Random.RandomRange(0.05f, 0.5f);
         while ( transform.localScale.x <= (scale.x-0.1f) && transform.localScale.y <= (scale.y-0.1f))
         {
-            transform.localScale = Vector2.Lerp(transform.localScale, scale, 0.01f + Time.deltaTime);
+            transform.localScale = Vector2.Lerp(transform.localScale, scale, interval + Time.deltaTime);
             yield return null;
         }
     }
