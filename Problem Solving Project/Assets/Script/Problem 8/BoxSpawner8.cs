@@ -31,9 +31,11 @@ public class BoxSpawner8 : MonoBehaviour
     private Dictionary<string, List<GameObject>> pool;
     private List<GameObject> boxList;
     float areaOffset;
+    int numberOfBox;
     // Start is called before the first frame update
     void Start()
     {
+        numberOfBox = Random.Range(1, maxNumberOfBox + 1);
         areaOffset = 0.5f;
         spawnBox();
     }
@@ -46,7 +48,7 @@ public class BoxSpawner8 : MonoBehaviour
         
         GameObject box;
 
-        for (int i = 0; i < maxNumberOfBox; i++)
+        for (int i = 0; i < numberOfBox; i++)
         {
             box = GenerateFromPool(boxPrefab);
             float randomScale = Random.Range(0, objectSizeMax) + 0.25f;

@@ -6,17 +6,19 @@ public class BoxSpawner6 : MonoBehaviour
 {
     [SerializeField] GameObject boxPrefab;
     [SerializeField] int maxNumberOfBox;
+    private int numberOfBox;
     [SerializeField] float areaWidth, areaHeight, objectSizeMax;
     float areaOffset;
     // Start is called before the first frame update
     void Start()
     {
+        numberOfBox = Random.Range(1, maxNumberOfBox+1);
         areaOffset = 0.5f;
         //menyimpan posisi instantiate
         float x,y;
         GameObject box;
         
-        for(int i = 0; i < maxNumberOfBox; i++)
+        for(int i = 0; i < numberOfBox; i++)
         {
             
             x = Random.RandomRange(-areaWidth + areaOffset , areaWidth - areaOffset);
