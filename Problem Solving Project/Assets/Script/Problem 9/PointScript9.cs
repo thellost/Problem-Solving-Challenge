@@ -6,16 +6,16 @@ public class PointScript9 : MonoBehaviour
 {
     private Vector2 scale;
     private Collider2D box, circle;
+    private SpriteRenderer spriteRenderer;
+    
     private void OnEnable()
     {
-
         StartCoroutine("spawnAnimation");
     }
-
     private void Start()
     {
-        box = GetComponent<BoxCollider2D>();
-        circle = GetComponent<CircleCollider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = PlanetInfo.Instance.planetImage[randomImage()];
         scale = transform.localScale;
         StartCoroutine("spawnAnimation");
     }
@@ -27,7 +27,6 @@ public class PointScript9 : MonoBehaviour
             StartCoroutine("deathAnimation");
         }
     }
-
     IEnumerator spawnAnimation()
     {
         enableCollider(true);
@@ -42,21 +41,29 @@ public class PointScript9 : MonoBehaviour
     IEnumerator deathAnimation()
     {
         enableCollider(false);
-        float interval = Random.RandomRange(0.05f, 0.25f);
-
-        while (transform.localScale.x >= (0.1f) && transform.localScale.y >= (0.1f))
+        float interval = Random.RandomRange(0.04f, 0.05f);
+        while (transform.localScale.x >= 0.05f)
         {
-            transform.localScale = Vector2.Lerp(transform.localScale, Vector2.zero, interval + Time.deltaTime);
+            Debug.Log("STOP");
+            //ntah knp kadang nge bug pake lerp
+            //transform.localScale = Vector2.Lerp(transform.localScale, Vector2.zero, interval);
+            transform.localScale =  transform.localScale - new Vector3(interval, interval);
             yield return null;
         }
-
         BoxSpawner9.Instance.ReturnToPool(gameObject);
     }
 
     private void enableCollider(bool boolean)
     {
+        box = GetComponent<BoxCollider2D>();
+        circle = GetComponent<CircleCollider2D>();
         box.enabled = boolean;
         circle.enabled = boolean;
+    }
+
+    private int randomImage()
+    {
+        return Random.Range(0,PlanetInfo.Instance.planetImage.Count);
     }
 
 }

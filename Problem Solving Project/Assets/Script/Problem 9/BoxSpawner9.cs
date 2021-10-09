@@ -27,7 +27,7 @@ public class BoxSpawner9 : MonoBehaviour
     [Header("Box Settings")]
     [SerializeField] GameObject boxPrefab;
     [SerializeField] int maxNumberOfBox;
-    [SerializeField] float areaWidth, areaHeight, objectSizeMax, respawnInterval;
+    [SerializeField] float areaWidth, areaHeight, objectSizeMax, objectSizeMinimum, respawnInterval;
     [SerializeField] Transform boxParent;
 
     // pool list
@@ -52,7 +52,8 @@ public class BoxSpawner9 : MonoBehaviour
         for (int i = 0; i < maxNumberOfBox; i++)
         {
             box = GenerateFromPool(boxPrefab);
-            box.transform.localScale = new Vector2(Random.Range(0, objectSizeMax) + 0.5f, Random.Range(0, objectSizeMax) + 0.5f);
+            float randomScale = Random.Range(0, objectSizeMax) + objectSizeMinimum;
+            box.transform.localScale = new Vector2(randomScale, randomScale);
         }
     }
     private GameObject GenerateFromPool(GameObject item)

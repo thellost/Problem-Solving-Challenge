@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 235621047}
   - component: {fileID: 235621050}
+  - component: {fileID: 235621046}
   - component: {fileID: 235621049}
   m_Layer: 0
   m_Name: GameManager
@@ -130,6 +131,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &235621046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235621045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5450c7bdcd7b16d45b68e3689fd52870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetImage:
+  - {fileID: 21300000, guid: e50942590b66cda4cb6ad873607464c7, type: 3}
+  - {fileID: 21300000, guid: 71cda4807d0c75c499e0da610fa6ed97, type: 3}
+  - {fileID: 21300000, guid: e65a76f632a9215439570df37f31f91e, type: 3}
+  - {fileID: 21300000, guid: 5e4f2579b68abe74492662e6885251a2, type: 3}
+  - {fileID: 21300000, guid: f92817ef49fae184e8febd230b7b87bc, type: 3}
 --- !u!4 &235621047
 Transform:
   m_ObjectHideFlags: 0
@@ -175,6 +194,7 @@ MonoBehaviour:
   areaWidth: 8
   areaHeight: 5
   objectSizeMax: 0.2
+  objectSizeMinimum: 0.5
   respawnInterval: 3
   boxParent: {fileID: 1485391939}
 --- !u!1 &262645586
@@ -346,7 +366,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.1509434, g: 0.14026344, b: 0.14026344, a: 0}
+  m_BackGroundColor: {r: 0.20392157, g: 0.20392157, b: 0.20784314, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -550,7 +570,7 @@ PointEffector2D:
   m_ForceSource: 0
   m_ForceTarget: 0
   m_ForceMode: 2
-  m_Drag: 1
+  m_Drag: 0
   m_AngularDrag: 1
 --- !u!4 &558938252
 Transform:

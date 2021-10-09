@@ -49,7 +49,8 @@ public class BoxSpawner8 : MonoBehaviour
         for (int i = 0; i < maxNumberOfBox; i++)
         {
             box = GenerateFromPool(boxPrefab);
-            box.transform.localScale = new Vector2(Random.Range(0, objectSizeMax) + 0.5f, Random.Range(0, objectSizeMax) + 0.5f);
+            float randomScale = Random.Range(0, objectSizeMax) + 0.25f;
+            box.transform.localScale = new Vector2(randomScale, randomScale);
         }
     }
     private GameObject GenerateFromPool(GameObject item)
