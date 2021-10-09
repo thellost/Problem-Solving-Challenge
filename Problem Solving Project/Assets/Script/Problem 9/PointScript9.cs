@@ -10,12 +10,12 @@ public class PointScript9 : MonoBehaviour
     
     private void OnEnable()
     {
+
+        setRandomImage();
         StartCoroutine("spawnAnimation");
     }
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = PlanetInfo.Instance.planetImage[randomImage()];
         scale = transform.localScale;
         StartCoroutine("spawnAnimation");
     }
@@ -41,13 +41,21 @@ public class PointScript9 : MonoBehaviour
     IEnumerator deathAnimation()
     {
         enableCollider(false);
+        //
+        int i = 0;
         float interval = Random.RandomRange(0.04f, 0.05f);
         while (transform.localScale.x >= 0.05f)
         {
-            Debug.Log("STOP");
+            //int i berguna untuk memaksa death animation keluar apalabila terjadi kesalahan
+            i++;
+            if(i >20)
+            {
+                break;
+            }
             //ntah knp kadang nge bug pake lerp
             //transform.localScale = Vector2.Lerp(transform.localScale, Vector2.zero, interval);
             transform.localScale =  transform.localScale - new Vector3(interval, interval);
+
             yield return null;
         }
         BoxSpawner9.Instance.ReturnToPool(gameObject);
@@ -61,9 +69,12 @@ public class PointScript9 : MonoBehaviour
         circle.enabled = boolean;
     }
 
-    private int randomImage()
+    private void setRandomImage()
     {
-        return Random.Range(0,PlanetInfo.Instance.planetImage.Count);
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = PlanetInfo.Instance.planetImage[Random.Range(0, PlanetInfo.Instance.planetImage.Count)];
+        
     }
 
 }
